@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Framewell independent television: channel guide, original shows and upcoming schedules.">
+<meta name="theme-color" content="#ee4c2f">
+<title>Framewell — Original television</title>
+<style>
+:root{--red:#ee4c2f;--ink:#24252b;--gray:#686970;--paper:#f6f5f2;--line:#deddd8}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}a:focus-visible{outline:3px solid var(--red);outline-offset:4px}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}
+header{background:white;border-bottom:1px solid var(--line)}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0}
+.logo{text-decoration:none;font-size:32px;font-weight:900;font-style:italic;letter-spacing:-1.5px;line-height:1}.logo b{color:var(--red)}.logo span{color:var(--gray)}
+.tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:var(--gray)}.preview{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.preview:before{content:"";display:inline-block;background:var(--red);width:7px;height:7px;border-radius:50%;margin-right:8px}
+nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:14px}nav a{white-space:nowrap;text-decoration:none;padding:9px 13px;border-radius:5px;font-size:13px;font-weight:750}
+nav a:hover{background:var(--paper)}nav a[aria-current=page]{background:var(--ink);color:white}[hidden]{display:none!important}
+.skip{position:absolute;top:-100px;background:white;padding:12px;z-index:10}.skip:focus{top:0}
+h1,h2,h3,p{margin-top:0}h1{font-size:clamp(42px,6vw,76px);line-height:1.05;letter-spacing:-3px;margin-bottom:24px}h1 em{color:var(--red);font-style:normal}
+h2{font-size:27px;letter-spacing:-1px}h3{line-height:1.3}.eyebrow{font-size:11px;letter-spacing:2px;font-weight:800;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.lede{font-size:18px;color:var(--gray);max-width:730px}.small{font-size:13px;color:var(--gray)}.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;padding:60px 0 48px}
+.button{display:inline-block;background:var(--red);color:white;padding:12px 20px;border-radius:5px;text-decoration:none;font-size:13px;font-weight:800}
+.hero-art{background:var(--ink);border-radius:12px;min-height:340px;position:relative;overflow:hidden;display:grid;place-items:center;color:white;text-align:center;padding:32px}
+.hero-art:before,.hero-art:after{content:"";position:absolute;inset:44px;border:1px solid #ef4c2f99;border-radius:22px;transform:rotate(-12deg)}
+.hero-art:after{inset:65px;border-color:#ffffff33;transform:rotate(12deg)}.art-text{position:relative;z-index:1}.art-text strong{font-size:48px;font-style:italic;letter-spacing:-3px;display:block}
+.art-text span{font:11px/2 monospace;letter-spacing:4px;color:#ff9d84}.art-label{position:absolute;bottom:20px;left:24px;font-size:9px;letter-spacing:2px;color:#c3c3c9}
+.section{border-top:1px solid var(--line);padding:36px 0 44px}.section-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:22px}.section-head h2{margin:0}.section-head span{font-size:12px;color:var(--gray)}
+.channels{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.channel-card{display:flex;flex-direction:column;gap:12px;background:white;border:1px solid var(--line);border-radius:8px;padding:24px;text-decoration:none}
+.channel-card:hover{border-color:var(--red)}.channel-card h3{font-size:19px;margin:0}.channel-card p{font-size:13px;color:var(--gray);margin:0}.number{font:11px monospace;color:var(--red)}.arrow{color:var(--red);margin-top:auto;font-size:22px}
+.pill{display:inline-block;width:fit-content;background:#fff0e9;color:#a62c17;padding:4px 9px;border-radius:4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.notice{background:#fff0e9;border-left:3px solid var(--red);border-radius:0 6px 6px 0;padding:20px 24px;font-size:14px;margin:0 0 30px}.intro{padding:50px 0 32px}.intro h1{font-size:clamp(38px,5vw,60px);margin-top:14px}
+.blocks{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}.block{border:1px solid var(--line);background:white;padding:22px;border-radius:8px}.block h3{margin-bottom:8px}.block p:last-child{font-size:14px;color:var(--gray);margin-bottom:0}
+.lineup{display:grid;grid-template-columns:repeat(3,1fr);gap:22px 20px}.show{background:white;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.poster{aspect-ratio:16/9;background:var(--ink);display:grid;place-items:center;position:relative;overflow:hidden}.poster:before{content:"";position:absolute;inset:24% 28%;border:2px solid #ef4c2f88;border-radius:14px;transform:rotate(-12deg)}
+.poster b{position:relative;color:#ff9d84;font-size:36px;letter-spacing:-2px}.poster span{position:absolute;bottom:10px;left:14px;color:#c3c3cb;font-size:9px;letter-spacing:1.5px;text-transform:uppercase}
+.show:nth-child(3n+2) .poster{background:#42444b}.show:nth-child(3n) .poster{background:#513d39}.show-body{padding:20px}.show h3{font-size:18px;margin-bottom:10px;letter-spacing:-.3px}.show p{font-size:13px;color:var(--gray);margin-bottom:16px}
+.rating{display:inline-block;border:1px solid var(--line);border-radius:3px;padding:4px 7px;font-size:10px;font-weight:800}.subbrand{margin:32px 0 20px}.subbrand h3{margin-bottom:5px;font-size:21px}.subbrand p{color:var(--gray);font-size:14px}
+table{border-collapse:collapse;width:100%;background:white;border:1px solid var(--line)}caption{text-align:left;color:var(--gray);font-size:13px;padding-bottom:16px}
+th{text-align:left;background:#eae9e5;font-size:11px;text-transform:uppercase;letter-spacing:1px}th,td{padding:16px 20px;border-bottom:1px solid var(--line)}td{font-size:13px;color:var(--gray)}
+.access{display:grid;grid-template-columns:1fr 2fr;gap:30px;background:white;padding:26px;border:1px solid var(--line);border-radius:8px}.access h2{font-size:20px;line-height:1.3;letter-spacing:0}.access p{font-size:14px;color:var(--gray);margin-bottom:8px}.access strong{color:var(--ink)}
+footer{background:var(--ink);color:#cacbd0;padding:36px 0;margin-top:32px}footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}footer p{font-size:12px;margin-bottom:6px}footer a{color:#ff9d84;font-size:12px}
+@media(max-width:900px){.channels,.lineup{grid-template-columns:repeat(2,1fr)}.tag{display:none}.hero{gap:24px}.hero-art{min-height:300px}.art-text strong{font-size:38px}}
+@media(max-width:600px){.wrap{width:calc(100% - 32px)}.top{padding:22px 0}.logo{font-size:29px}.preview{font-size:9px}nav a{font-size:12px;padding:9px 10px}.hero{grid-template-columns:1fr;padding:36px 0;gap:24px}h1{letter-spacing:-2px}.hero-art{min-height:250px}.lede{font-size:16px}.channels,.lineup,.blocks,.access{grid-template-columns:1fr}.section{padding:30px 0}.section-head{display:block}.section-head span{display:block;margin-top:8px}.intro{padding-top:36px}.access{gap:8px;padding:22px}th,td{padding:12px 10px}footer .wrap{display:block}footer p{margin-bottom:12px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap"><div class="top"><a class="logo" href="#home" aria-label="Framewell home"><b>Frame</b><span>well</span></a><span class="tag">Independent television. Original perspective.</span><span class="preview">Preview site</span></div>
+<nav aria-label="Channel tabs"><a href="#home" aria-current="page">Home</a><a href="#network">Framewell Network</a><a href="#sports">Framewell Sports</a><a href="#kids">Framewell Kids</a><a href="#movies">Framewell Movies</a></nav></div></header>
+<main id="main" class="wrap" tabindex="-1">
+<noscript>JavaScript is off: channel guides are displayed below. Lineup cards require JavaScript.</noscript>
+<section id="home" class="channel" aria-labelledby="home-title">
+<div class="hero"><div><p class="eyebrow">Welcome to Framewell</p><h1 id="home-title">A new frame<br>of <em>television.</em></h1><p class="lede">Original stories. Familiar comforts. Unexpected favorites. Meet an independent family of channels with a perspective all its own.</p><a class="button" href="#network">Explore the flagship channel &rarr;</a><p class="small" style="margin-top:16px">The channel guide starts here. Broadcasts are coming later.</p></div>
+<div class="hero-art" role="img" aria-label="Framewell original television placeholder artwork"><div class="art-text"><strong>Framewell</strong><span>ORIGINAL TELEVISION</span></div><span class="art-label">A PLACE FOR SOMETHING DIFFERENT</span></div></div>
+<div class="section"><div class="section-head"><h2>Find your Framewell.</h2><span>Four channels. One original point of view.</span></div><div class="channels">
+<a class="channel-card" href="#network"><span class="number">01 / THE FLAGSHIP</span><h3>Framewell Network</h3><p>Original series, everyday discoveries and late-night personality.</p><span class="pill">TV-Y7 to TV-14</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+<a class="channel-card" href="#sports"><span class="number">02 / IN DEVELOPMENT</span><h3>Framewell Sports</h3><p>A new home for the action. The playbook is still taking shape.</p><span class="pill">Work in Progress</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+<a class="channel-card" href="#kids"><span class="number">03 / BIG IMAGINATIONS</span><h3>Framewell Kids</h3><p>Small discoveries and colorful adventures for growing minds.</p><span class="pill">TV-Y to TV-G</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+<a class="channel-card" href="#movies"><span class="number">04 / THE BIG PICTURE</span><h3>Framewell Movies</h3><p>Ad-free premium movie channels. Make room for movie night.</p><span class="pill">Cinema + Premiere</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+</div></div>
+<div class="notice"><strong>A first look, not a live broadcast.</strong> Artwork, synopses and individual ratings are placeholders. Schedules are intentionally unfilled; no videos or live streams are available yet.</div>
+<div class="access"><div><p class="eyebrow">Television for everyone</p><h2>Accessibility is part of the picture.</h2></div><div><p><strong>Programs will support closed captions (CC), SDH subtitles and audio description (AD).</strong></p><p>These features will accompany programs when broadcasts are added. This preview contains no video player or accessibility tracks yet.</p></div></div>
+</section>
+<section id="network" class="channel" aria-labelledby="network-title">
+<div class="intro"><p class="eyebrow">01 / The flagship</p><span class="pill">General audience &middot; TV-Y7 to TV-14</span><h1 id="network-title">Framewell <em>Network.</em></h1><p class="lede">The main Framewell channel: original object-show worlds, cooking, home improvement, game shows, movies and a little late-night conversation.</p></div>
+<div class="blocks"><article class="block"><p class="eyebrow">Programming block</p><h3>Framewell News</h3><p>A dedicated news block within Framewell Network. Stories, presenters and airtimes to be announced.</p></article><article class="block"><p class="eyebrow">Programming block</p><h3>Framewell Nightly</h3><p>The after-hours side of Framewell Network. Late-night programming and airtimes to be announced.</p></article></div>
+<div class="section"><div class="section-head"><h2>The lineup</h2><span>Original titles / placeholder artwork</span></div><p class="small">Titles below are the initial lineup. Synopses and individual TV ratings are illustrative placeholders, not finalized program information.</p><div class="lineup" id="network-lineup"></div></div><div class="schedule-slot" data-channel="Framewell Network"></div><div class="access-slot"></div>
+</section>
+<section id="sports" class="channel" aria-labelledby="sports-title">
+<div class="intro"><p class="eyebrow">02 / In development</p><span class="pill">Work in Progress</span><h1 id="sports-title">Framewell <em>Sports.</em></h1><p class="lede">The next chapter of the Framewell channel family is still on the drawing board. Coverage, shows and events will be announced as the channel takes shape.</p></div><div class="notice"><strong>Work in Progress.</strong> No live events, confirmed sports rights or broadcast times are announced on this preview.</div>
+<div class="section"><div class="section-head"><h2>Future lineup</h2><span>Preview only</span></div><div class="lineup" id="sports-lineup"></div></div><div class="schedule-slot" data-channel="Framewell Sports"></div><div class="access-slot"></div>
+</section>
+<section id="kids" class="channel" aria-labelledby="kids-title">
+<div class="intro"><p class="eyebrow">03 / Big imaginations</p><span class="pill">TV-Y to TV-G</span><h1 id="kids-title">Framewell <em>Kids.</em></h1><p class="lede">A bright corner of Framewell for younger viewers: playful discoveries, friendly stories and room for imagination.</p></div>
+<div class="section"><div class="section-head"><h2>Little previews. Big possibilities.</h2><span>Sample lineup / titles to be replaced</span></div><p class="small">Sample titles, descriptions and ratings below are placeholders, not a confirmed Kids lineup.</p><div class="lineup" id="kids-lineup"></div></div><div class="schedule-slot" data-channel="Framewell Kids"></div><div class="access-slot"></div>
+</section>
+<section id="movies" class="channel" aria-labelledby="movies-title">
+<div class="intro"><p class="eyebrow">04 / The big picture</p><span class="pill">Ad-free premium movie channels</span><h1 id="movies-title">Framewell <em>Movies.</em></h1><p class="lede">A family of ad-free premium movie channels, from a cinema showcase to a premiere destination. These channel names are placeholders while the movie lineup takes shape.</p></div>
+<div class="notice">This is a free channel-guide preview, not a paid subscription or streaming service. No films are available to watch here yet. Sample titles, descriptions and ratings are provisional.</div>
+<div class="section"><div class="section-head"><h2>Movie showcases</h2><span>Placeholder names / artwork / titles</span></div>
+<div class="subbrand"><h3>FRAMEWELL CINEMA</h3><p>A place for the feature presentation. Film selections to be announced.</p></div><div class="lineup" id="cinema-lineup"></div>
+<div class="subbrand"><h3>FRAMEWELL PREMIERE</h3><p>A destination for the next movie-night discovery. Premiere details to come.</p></div><div class="lineup" id="premiere-lineup"></div>
+<div class="subbrand"><h3>Kids movie showcase</h3><p>A planned family-friendly corner of Framewell Movies. Channel name and selections to be announced.</p></div><div class="lineup" id="family-lineup"></div></div><div class="schedule-slot" data-channel="Framewell Movies"></div><div class="access-slot"></div>
+</section>
+</main>
+<footer><div class="wrap"><div><p><strong>FRAMEWELL</strong> / Independent television. Original perspective.</p><p>Placeholder channel guide &middot; Artwork, ratings and schedules subject to change.</p></div><a href="https://github.com/jorjoey20/framewell">Site source on GitHub</a></div></footer>
+<script>
+// Replace sample synopses, ratings and generated artwork with approved program metadata.
+const shows=[
+['Shelf Life','Everyday adventures, one shelf at a time.','TV-Y7'],
+['Paper Planet','Big discoveries unfold in a world made of paper.','TV-Y7'],
+['Crumbs','Small characters find that little moments can make big stories.','TV-Y7'],
+['Inanimate High','A school day with an extraordinary cast of objects.','TV-PG'],
+['Cliffhanger Cup','A competition where the next turn is never far away.','TV-PG'],
+['Pocket Change','Small change leads to unexpected adventures.','TV-Y7'],
+['Simmer Down with Chef Ladle','Comfort-food inspiration from a kitchen full of personality.','TV-Y7'],
+['Nuts & Bolts Home Rescue','Creative fixes and fresh starts for spaces in need of care.','TV-Y7'],
+['Static','Unusual signals lead to unexpected stories.','TV-14'],
+['The Nightly Desk with Remy Remote','A late-night desk, a fresh perspective and room for conversation.','TV-14'],
+['The Lost Sock Expedition','A small mystery becomes an adventure beyond the laundry basket.','TV-Y7'],
+['The Midnight Museum','After closing time, the exhibits have stories of their own.','TV-PG'],
+['The Last Lighthouse Keeper','A light on the horizon and a story waiting to be told.','TV-PG'],
+['The Price Is Bright','Playful guesses and bright ideas in an original game-show setting.','TV-Y7'],
+['Thrift Store Treasures','Unexpected finds and the stories behind secondhand discoveries.','TV-Y7'],
+['The Morning Mix with Penny Pushpin','A friendly mix of ideas, conversations and a fresh start to the day.','TV-Y7'],
+['Lamp Post Diaries','Small stories from a familiar corner of the neighborhood.','TV-PG'],
+['Framewell Shopping Hour','A showcase-style program; products and format to be announced.','TV-Y7']
+];
+const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function cards(id,items){document.getElementById(id).innerHTML=items.map(([title,description,rating])=>{
+const initials=title.split(' ').filter(w=>!['the','with','&'].includes(w.toLowerCase())).slice(0,2).map(w=>w[0]).join('');
+return `<article class="show"><div class="poster" role="img" aria-label="${esc(title)} placeholder artwork"><b aria-hidden="true">${esc(initials)}</b><span>Framewell / placeholder art</span></div><div class="show-body"><h3>${esc(title)}</h3><p>${esc(description)}</p><span class="rating">${esc(rating)} &middot; placeholder</span></div></article>`;
+}).join('')}
+cards('network-lineup',shows);
+cards('sports-lineup',[['Sports coverage — title to come','Coverage plans and program details are still in development.','Rating TBD']]);
+cards('kids-lineup',[
+['Little Frames — sample title','A gentle sample adventure for little imaginations.','TV-Y'],
+['Color Corner — sample title','A playful sample world of shapes, colors and discoveries.','TV-Y'],
+['Tiny Discoveries — sample title','A sample family-friendly series about everyday wonders.','TV-G']
+]);
+cards('cinema-lineup',[['Cinema feature — title to come','A placeholder feature presentation. The actual movie and synopsis will be added later.','TV-PG']]);
+cards('premiere-lineup',[['Premiere feature — title to come','A placeholder premiere selection. Movie details and premiere date are not yet announced.','TV-14']]);
+cards('family-lineup',[['Family feature — title to come','A placeholder for a future kids movie selection. Final title and details to follow.','TV-G']]);
+document.querySelectorAll('.schedule-slot').forEach(slot=>{
+slot.innerHTML=`<div class="section"><div class="section-head"><h2>What's on</h2><span>${esc(slot.dataset.channel)}</span></div><table><caption>Schedule coming soon. Dates, times and time zone will be filled in when broadcasts are ready.</caption><thead><tr><th scope="col">Date / time</th><th scope="col">Program</th><th scope="col">Details</th></tr></thead><tbody><tr><td>To be announced</td><td>To be announced</td><td>Not yet scheduled</td></tr><tr><td>To be announced</td><td>To be announced</td><td>Not yet scheduled</td></tr></tbody></table></div>`;
+});
+document.querySelectorAll('.access-slot').forEach(slot=>{
+slot.innerHTML='<div class="section"><div class="access"><div><p class="eyebrow">Accessible programming</p><h2>More ways to enjoy the story.</h2></div><div><p><strong>Programs will support closed captions (CC), SDH subtitles and audio description (AD).</strong></p><p>Accessibility tracks will be added with the programs. This placeholder guide has no video player yet.</p></div></div></div>';
+});
+const panels=[...document.querySelectorAll('.channel')];
+function route(){
+const requested=location.hash.slice(1)||'home';
+const selected=panels.some(p=>p.id===requested)?requested:'home';
+panels.forEach(p=>p.hidden=p.id!==selected);
+document.querySelectorAll('nav a').forEach(a=>{if(a.hash==='#'+selected)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+document.title=selected==='home'?'Framewell — Original television':document.getElementById(selected+'-title').textContent.trim()+' | Framewell';
+window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',()=>{if(location.hash==='#main')return;route();document.getElementById('main').focus({preventScroll:true})});
+route();
+</script>
+</body>
+</html>
